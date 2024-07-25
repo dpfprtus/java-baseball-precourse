@@ -18,10 +18,7 @@ public class IO {
     }
 
     public void printMessage(List<String> strikeAndBall) {
-        String message = strikeAndBall.get(1)
-                + "볼 "
-                + strikeAndBall.get(0)
-                + "스트라이크";
+        String message = String.format("%s볼 %s스트라이크", strikeAndBall.get(1), strikeAndBall.get(0));
         System.out.println(message);
     }
 
