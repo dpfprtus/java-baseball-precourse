@@ -5,9 +5,16 @@ import static java.lang.System.exit;
 import java.util.List;
 
 public class GameRunner {
-    Validate validator = new Validate();
-    GenerateNumber generateNumber = new GenerateNumber();
-    IO io = new IO();
+
+    private final Validate validator;
+    private final GenerateNumber generateNumber;
+    private final IO io;
+
+    public GameRunner(Validate validate, GenerateNumber generateNumber, IO io) {
+        this.validator = validate;
+        this.generateNumber = generateNumber;
+        this.io = io;
+    }
 
     public void run() {
 
@@ -36,7 +43,6 @@ public class GameRunner {
                 }
                 return;
             }
-
             io.printMessage(resultList);
 
         }
