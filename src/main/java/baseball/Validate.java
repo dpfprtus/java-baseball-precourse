@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class Validate {
+    private static final String SUCCESS_COUNT = "3";
+    private static final String EXIT_CODE = "2";
     public void validateIsUserInputNumber(String input) {
         try {
             Integer.parseInt(input);
@@ -40,11 +42,11 @@ public class Validate {
     }
 
     public boolean isStrikeCount3(String input) {
-        return input.equals("3");
+        return input.equals(SUCCESS_COUNT);
     }
 
 
     public boolean isGameRestartNumber(String input) {
-        return input.equals("1");
+        return input.equals(EXIT_CODE);
     }
 }
