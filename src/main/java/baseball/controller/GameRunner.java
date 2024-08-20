@@ -24,11 +24,7 @@ public class GameRunner {
         List<String> answer = generateNumber.generate();
 
         while (true) {
-            io.startMessage();
-            String inputNumber = io.input();
-
-            validateException(inputNumber);
-            List<String> resultList = validator.validateUserInputNumberAndAnswer(inputNumber, answer);
+            List<String> resultList = getResultList(answer);
 
             String strikeCount = resultList.get(0);
 
@@ -49,6 +45,14 @@ public class GameRunner {
             io.printMessage(resultList);
 
         }
+    }
+
+    private List<String> getResultList(List<String> answer) {
+        io.startMessage();
+        String inputNumber = io.input();
+
+        validateException(inputNumber);
+        return validator.validateUserInputNumberAndAnswer(inputNumber, answer);
     }
 
     private void validateException(String inputNumber) {
