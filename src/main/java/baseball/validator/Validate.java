@@ -1,4 +1,4 @@
-package baseball;
+package baseball.validator;
 
 import java.util.List;
 import java.util.Objects;
@@ -6,6 +6,7 @@ import java.util.Objects;
 public class Validate {
     private static final String SUCCESS_COUNT = "3";
     private static final String EXIT_CODE = "2";
+
     public void validateIsUserInputNumber(String input) {
         try {
             Integer.parseInt(input);
@@ -29,12 +30,12 @@ public class Validate {
     public List<String> validateUserInputNumberAndAnswer(String input, List<String> answer) {
         int strike = 0;
         int ball = 0;
+
         for (String s : answer) {
-            if (input.contains(s)) {
-                if (input.indexOf(s) == answer.indexOf(s)) {
-                    strike += 1;
-                    continue;
-                }
+            if (input.contains(s) && input.indexOf(s) == answer.indexOf(s)) {
+                strike += 1;
+            }
+            if (input.contains(s) && input.indexOf(s) != answer.indexOf(s)) {
                 ball += 1;
             }
         }

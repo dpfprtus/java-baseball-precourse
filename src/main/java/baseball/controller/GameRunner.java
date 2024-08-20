@@ -1,7 +1,10 @@
-package baseball;
+package baseball.controller;
 
 import static java.lang.System.exit;
 
+import baseball.model.GenerateNumber;
+import baseball.validator.Validate;
+import baseball.view.IO;
 import java.util.List;
 
 public class GameRunner {
